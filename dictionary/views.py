@@ -1,9 +1,9 @@
-from rest_framework.generics import RetrieveAPIView, ListAPIView
+from rest_framework.generics import ListAPIView, RetrieveAPIView
+from rest_framework.response import Response
 from rest_framework.status import HTTP_200_OK
 
-from .serializers import EntrySerializer
-from rest_framework.response import Response
 from .models import Entry
+from .serializers import EntrySerializer
 
 
 class WordOfTheDay(RetrieveAPIView):

@@ -1,0 +1,1 @@
+celery -A plexis_backend flower --address=127.0.0.1 --port=5566

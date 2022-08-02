@@ -1,0 +1,1 @@
+celery -A plexis_backend beat -l INFO
