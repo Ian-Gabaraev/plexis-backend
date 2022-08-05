@@ -16,6 +16,6 @@ app.conf.beat_schedule = {
     },
     'cache_wod': {
         'task': 'cache_wod',
-        'schedule': crontab(hour=24)
+        'schedule': crontab(hour=0),
     }
 }
