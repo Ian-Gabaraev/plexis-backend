@@ -14,4 +14,8 @@ app.conf.beat_schedule = {
         'task': 'suggest_a_word',
         'schedule': 15,
     },
+    'cache_wod': {
+        'task': 'cache_wod',
+        'schedule': crontab(hour=24)
+    }
 }
