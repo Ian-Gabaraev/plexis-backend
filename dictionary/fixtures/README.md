@@ -1,0 +1,1 @@
+### ./manage.py loaddata dictionary/fixtures/tags.json
