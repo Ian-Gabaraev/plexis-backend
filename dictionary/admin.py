@@ -19,6 +19,7 @@ class TagInline(admin.StackedInline):
 
 
 class EntryAdmin(admin.ModelAdmin):
+    search_fields = ('word',)
     inlines = [
         ExampleInline,
         EntryLearningProgressInline,

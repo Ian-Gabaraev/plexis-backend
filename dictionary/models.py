@@ -27,10 +27,10 @@ class PersonalDictionary(models.Model):
 
 class Entry(models.Model):
     word = models.CharField(max_length=128)
-    definition = models.TextField()
+    definition = models.TextField(blank=True)
     tags = models.ManyToManyField(to=Tag, blank=True)
-    synonyms = models.ManyToManyField(to="Entry", related_name="syn")
-    antonyms = models.ManyToManyField(to="Entry", related_name="ant")
+    synonyms = models.ManyToManyField(to="Entry", related_name="syn", blank=True)
+    antonyms = models.ManyToManyField(to="Entry", related_name="ant", blank=True)
 
     def __str__(self):
 

@@ -14,12 +14,12 @@ class ExampleSerializer(ModelSerializer):
 
     class Meta:
         model = Example
-        fields = "__all__"
+        fields = ("text", "author", "source")
 
 
 class EntrySerializer(ModelSerializer):
     examples = SerializerMethodField()
-    tags = SerializerMethodField()
+    tags = TagSerializer(many=True)
 
     class Meta:
         model = Entry
@@ -29,12 +29,5 @@ class EntrySerializer(ModelSerializer):
 
         return ExampleSerializer(
             obj.example_set.all(),
-            many=True
-        ).data
-
-    def get_tags(self, obj: Entry): # noqa
-
-        return TagSerializer(
-            obj.tag_set.all(),
             many=True
         ).data
