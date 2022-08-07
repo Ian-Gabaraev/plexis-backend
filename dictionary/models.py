@@ -1,11 +1,11 @@
-from django.db import models
 from django.contrib.auth import get_user_model
+from django.db import models
 
 User = get_user_model()
 
 
 class Tag(models.Model):
-    value = models.CharField(max_length=32)
+    value = models.CharField(max_length=32, unique=True)
 
     def __str__(self):
 
@@ -29,6 +29,8 @@ class Entry(models.Model):
     word = models.CharField(max_length=128)
     definition = models.TextField()
     tags = models.ManyToManyField(to=Tag, blank=True)
+    synonyms = models.ManyToManyField(to="Entry", related_name="syn")
+    antonyms = models.ManyToManyField(to="Entry", related_name="ant")
 
     def __str__(self):
 

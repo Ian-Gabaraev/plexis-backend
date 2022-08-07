@@ -1,0 +1,16 @@
+[
+  {
+    "pk": null,
+    "model": "dictionary.tag",
+    "fields": {
+      "value": "offensive"
+    }
+  },
+  {
+    "pk": null,
+    "model": "dictionary.tag",
+    "fields": {
+      "value": "satvocabulary"
+    }
+  }
+]
